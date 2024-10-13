@@ -1,0 +1,28 @@
+interface range f0/1-2
+switchport mode trunk
+ex
+
+vlan 10
+name LAN
+vlan 50
+name WLAN
+vlan 99
+name VOICE
+
+interface range f0/3-20
+switchport mode access
+switchport access vlan 10
+switchport voice vlan 99
+ex
+
+interface range f0/21-24
+switchport mode access
+switchport access vlan 50
+ex
+
+interface range f0/3-24
+spanning-tree portfast
+spanning-tree bpduguard enable
+
+do wr
+end

@@ -1,0 +1,19 @@
+enable
+conf t
+hostname CON-SW
+line console 0
+password cisco
+login
+ex
+
+enable password cisco
+service password-encryption
+crypto key generate rsa general-keys modulus 1024
+banner motd *UNAUTHORIZED ACCESS ARE PUNISHABLE*
+
+username cisco password cisco
+ip domain-name cisco.com
+do wr
+end
+
+

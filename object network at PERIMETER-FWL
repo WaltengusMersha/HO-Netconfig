@@ -1,0 +1,24 @@
+object network LAN-INTERNET
+subnet 192.168.0.0 255.255.240.0
+nat (INSIDE,OUTSIDE) dynamic interface
+ex
+config t
+object network WLAN-INTERNET
+subnet 172.16.0.0 255.255.240.0
+nat (INSIDE,OUTSIDE) dynamic interface
+ex
+config t
+object network DMZ-INTERNET
+subnet 10.20.10.0 255.255.255.192
+nat (DMZ,OUTSIDE) dynamic interface
+ex
+config t
+object network INTERNET-DMZ
+subnet 0.0.0.0 0.0.0.0
+nat (OUTSIDE,DMZ) dynamic interface
+ex
+config t
+object network INTERNET-Inside
+subnet 0.0.0.0 0.0.0.0
+nat (OUTSIDE,INSIDE) dynamic interface
+ex

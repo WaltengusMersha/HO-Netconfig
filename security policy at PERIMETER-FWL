@@ -1,0 +1,22 @@
+interface g1/1
+ip address 10.30.10.1 255.255.255.252
+no shutdown
+nameif INSIDE
+security-level 100
+ex
+
+interface g1/2
+ip address 10.20.10.1 255.255.0.0
+no shutdown
+nameif DMZ
+security-level 70
+ex
+
+interface g1/3
+ip address 197.200.100.1 255.255.255.252
+no shutdown
+nameif OUTSIDE
+security-level 0
+ex
+do wr m
+

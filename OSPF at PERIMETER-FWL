@@ -1,0 +1,11 @@
+router ospf 25
+router-id 1.5.1.5
+network 197.200.100.0 255.255.255.252 area 0
+network 10.30.10.0 255.255.255.252 area 0
+network 10.20.10.0 255.255.255.192 area 0
+EX
+
+route OUTSIDE 0.0.0.0 0.0.0.0 197.200.100.2
+end
+wr m
+

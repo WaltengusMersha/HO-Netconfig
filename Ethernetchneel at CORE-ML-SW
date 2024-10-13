@@ -1,0 +1,20 @@
+interface range g1/0/2-8
+switchport mode trunk
+ex
+
+vlan 10
+name LAN
+vlan 50
+name WLAN
+vlan 99
+name VOICE
+
+
+interface range g1/0/21-24
+channel-group 1 mode active
+ex
+interface port-channel 1
+switchport mode trunk
+
+do wr
+end

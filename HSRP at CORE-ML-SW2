@@ -1,0 +1,26 @@
+interface vlan 10
+ip address 192.168.0.2 255.255.240.0
+ip helper-address 10.20.10.10
+standby 10 priority 110
+standby 10 ip 192.168.0.1
+standby 10 preempt
+ex
+
+
+interface vlan 50
+ip address 10.10.0.2 255.255.0.0
+ip helper-address 10.20.10.10
+standby 50 priority 110
+standby 50 ip 10.10.0.1
+standby 50 preempt
+ex
+
+interface vlan 99
+ip address 172.16.0.2 255.255.240.0
+standby 99 priority 110
+standby 99 ip 172.16.0.1
+standby 99 preempt
+ex
+
+do wr
+end
