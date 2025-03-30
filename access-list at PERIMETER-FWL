@@ -1,4 +1,3 @@
-
 access-list INSIDE-DMZ extended permit icmp any any
 access-list INSIDE-DMZ extended permit tcp any any eq 80
 access-list INSIDE-DMZ extended permit udp any any eq 67
@@ -7,12 +6,8 @@ access-list INSIDE-DMZ extended permit udp any any eq 53
 access-list INSIDE-DMZ extended permit tcp any any eq 53
 access-list INSIDE-OUTSIDE extended permit icmp any any
 access-list INSIDE-OUTSIDE extended permit tcp any any eq 80
-access-list OUTSIDE-DMZ extended permit icmp any any
 access-list OUTSIDE-DMZ extended permit tcp any any eq 80
-access-list OUTSIDE-DMZ extended deny udp any any eq 67
-access-list OUTSIDE-DMZ extended deny udp any any eq 68
-access-list OUTSIDE-DMZ extended permit udp any any eq 53
-access-list OUTSIDE-DMZ extended permit tcp any any eq 53
+access-list OUTSIDE-DMZ extended permit tcp any any eq 8080
 access-list OUTSIDE-INSIDE extended deny ip any any
 access-group INSIDE-DMZ in interface DMZ
 access-group INSIDE-OUTSIDE in interface OUTSIDE
